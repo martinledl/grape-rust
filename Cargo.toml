@@ -1,5 +1,5 @@
 [package]
-name = "grape"
+name = "zedl-grep"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,8 +7,8 @@ authors = ["Martin Lédl"]
 description = "A tool to search for text in files recursively."
 license = "Apache-2.0"
 readme = "README.md"
-homepage = "https://github.com/martinledl/grape-rust/"
-repository = "https://github.com/martinledl/grape-rust/"
+homepage = "https://github.com/martinledl/zedl-grep-rust"
+repository = "https://github.com/martinledl/zedl-grep-rust"
 keywords = ["cli", "search", "grep"]
 categories = ["command-line-utilities"]
 
