@@ -31,7 +31,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         pb.inc(1);
     }
 
-    pb.finish_with_message("Done!\n\n");
+    pb.finish_and_clear();
 
     let stdout = io::stdout();
     let mut handle = stdout.lock();
