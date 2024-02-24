@@ -6,7 +6,7 @@ use std::io;
 use std::io::Write;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let args = grape::Args::parse();
+    let args = zedl_grep::Args::parse();
     let files: Vec<String> = SearchBuilder::default()
         .location(&args.path)
         .depth(args.depth)
@@ -27,7 +27,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     for path in files_only {
         let path = std::path::Path::new(&path);
-        grape::process_file(&args, path, &mut buf)?;
+        zedl_grep::process_file(&args, path, &mut buf)?;
         pb.inc(1);
     }
 
