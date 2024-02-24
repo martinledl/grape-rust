@@ -27,7 +27,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     for path in files_only {
         let path = std::path::Path::new(&path);
-        zedl_grep::process_file(&args, path, &mut buf)?;
+        let result = zedl_grep::process_file(&args, path, &mut buf);
+        if let Err(e) = result {
+            pb.println(format!("Error: {} --- {}", path.to_string_lossy(), e));
+        }
         pb.inc(1);
     }
 

@@ -44,7 +44,13 @@ pub fn process_file(
     path: &std::path::Path,
     buf: &mut String,
 ) -> Result<(), Box<dyn std::error::Error>> {
-    let file = File::open(path)?;
+    let file = File::open(path);
+    let file = match file {
+        Ok(file) => file,
+        Err(e) => {
+            return Err(e.into());
+        }
+    };
     let reader = BufReader::new(file);
 
     let mut current_file_buf = String::new();
